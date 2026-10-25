@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#35105f">
     <title>Raczs Gifts Shop | Gifts Made Special</title>
-    <meta name="description" content="Discover beautiful gift boxes, bouquets, graduation gifts and thoughtful surprises at Raczs Gifts Shop.">
+    <meta name="description" content="Shop gift boxes, money bouquets, flower bouquets, baby gifts, graduation gifts, jewellery, personalised gifts, and Islamic books at Raczs Gifts Shop.">
+
     <style>
         :root {
             --purple: #35105f;
@@ -14,10 +15,15 @@
             --gold: #d4af37;
             --cream: #fffdf8;
             --text: #30243a;
+            --muted: #756a7d;
         }
 
         * {
             box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
@@ -44,13 +50,14 @@
             font-size: 25px;
         }
 
-        .logo span {
+        .logo span,
+        footer span {
             color: var(--gold);
         }
 
         nav {
             display: flex;
-            gap: 20px;
+            gap: 18px;
             flex-wrap: wrap;
         }
 
@@ -71,7 +78,7 @@
             color: white;
         }
 
-        .hero .eyebrow {
+        .eyebrow {
             color: var(--gold);
             text-transform: uppercase;
             letter-spacing: 3px;
@@ -124,8 +131,32 @@
         }
 
         .section-heading p {
-            color: #756a7d;
+            color: var(--muted);
             line-height: 1.6;
+        }
+
+        .category-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin: 0 auto 35px;
+        }
+
+        .category-links a {
+            display: inline-block;
+            padding: 10px 15px;
+            border: 1px solid #e4d4ee;
+            border-radius: 24px;
+            color: var(--purple);
+            text-decoration: none;
+            font-size: 14px;
+            background: white;
+        }
+
+        .category-links a:hover {
+            background: var(--purple);
+            color: white;
         }
 
         .products {
@@ -154,20 +185,30 @@
             padding: 18px;
         }
 
+        .category-label {
+            display: inline-block;
+            color: var(--purple-light);
+            background: #f4edf9;
+            padding: 5px 9px;
+            border-radius: 20px;
+            font-size: 11px;
+            margin-bottom: 10px;
+        }
+
         .product-info h3 {
             margin: 0 0 8px;
             color: var(--purple);
         }
 
         .product-info p {
-            color: #756a7d;
+            color: var(--muted);
             font-size: 14px;
             line-height: 1.6;
         }
 
         .price {
             color: var(--purple-light);
-            font-size: 20px;
+            font-size: 19px;
             font-weight: bold;
             margin: 15px 0;
         }
@@ -185,6 +226,11 @@
 
         .add-button:hover {
             background: var(--purple-light);
+        }
+
+        .add-button:disabled {
+            background: #a99bb4;
+            cursor: not-allowed;
         }
 
         .cart-section {
@@ -236,16 +282,23 @@
             font-weight: bold;
         }
 
+        .whatsapp-button:hover {
+            background: #126639;
+        }
+
+        .notice {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.6;
+            margin-top: 15px;
+        }
+
         footer {
             background: var(--purple);
             color: white;
             text-align: center;
             padding: 28px 6%;
             line-height: 1.8;
-        }
-
-        footer span {
-            color: var(--gold);
         }
 
         @media (max-width: 600px) {
@@ -269,11 +322,15 @@
             .product img {
                 height: 240px;
             }
+
+            .cart-item {
+                align-items: flex-start;
+            }
         }
     </style>
 </head>
-<body>
 
+<body>
     <header>
         <h1 class="logo">Raczs <span>Gifts Shop</span></h1>
 
@@ -290,7 +347,7 @@
             <h2>Make Every Moment Feel Special</h2>
             <p>
                 Discover thoughtful gifts for birthdays, graduations,
-                new babies and all the people who make life beautiful.
+                new babies, special occasions and the people you love.
             </p>
             <a class="button" href="#shop">Explore Our Gifts</a>
         </section>
@@ -298,17 +355,29 @@
         <section class="section" id="shop">
             <div class="section-heading">
                 <h2>Find the Perfect Gift</h2>
-                <p>A little something special for every occasion.</p>
+                <p>Explore our gift collections and find something special.</p>
+            </div>
+
+            <div class="category-links">
+                <a href="#gift-boxes">Gift Boxes</a>
+                <a href="#money-bouquets">Money Bouquets</a>
+                <a href="#flower-bouquets">Flower Bouquets</a>
+                <a href="#baby-gifts">Baby Gifts</a>
+                <a href="#bride-gifts">Bride-to-be</a>
+                <a href="#graduation-gifts">Graduation</a>
+                <a href="#jewellery">Jewellery</a>
+                <a href="#birthday-gifts">Birthday Gifts</a>
+                <a href="#personalised-gifts">Personalised Gifts</a>
+                <a href="#sali-kitab">Sali and Kitab</a>
+                <a href="#other-gifts">Other Gifts</a>
             </div>
 
             <div class="products">
-                <article class="product">
-                    <img
-                        src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=700&q=80"
-                        alt="Beautiful wrapped gift box"
-                        loading="lazy"
-                    >
+
+                <article class="product" id="gift-boxes">
+                    <img src="https://images.unsplash.com/photo-1549465220-1a8b9238cd48?auto=format&fit=crop&w=700&q=80" alt="Wrapped gift box" loading="lazy">
                     <div class="product-info">
+                        <span class="category-label">Gift Boxes</span>
                         <h3>Luxury Gift Box</h3>
                         <p>An elegant gift for someone truly special.</p>
                         <div class="price">KSh 2,500</div>
@@ -316,13 +385,21 @@
                     </div>
                 </article>
 
-                <article class="product">
-                    <img
-                        src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=700&q=80"
-                        alt="Beautiful bouquet of flowers"
-                        loading="lazy"
-                    >
+                <article class="product" id="money-bouquets">
+                    <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=80" alt="Gift wrapped with ribbon" loading="lazy">
                     <div class="product-info">
+                        <span class="category-label">Money Bouquets</span>
+                        <h3>Money Bouquet</h3>
+                        <p>A beautiful money bouquet for your special occasion. Final price depends on your requested amount.</p>
+                        <div class="price">Price on Request</div>
+                        <button class="add-button" data-name="Money Bouquet" data-price="0" data-quote="true">Ask for Price</button>
+                    </div>
+                </article>
+
+                <article class="product" id="flower-bouquets">
+                    <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?auto=format&fit=crop&w=700&q=80" alt="Flower bouquet" loading="lazy">
+                    <div class="product-info">
+                        <span class="category-label">Flower Bouquets</span>
                         <h3>Flower Bouquet</h3>
                         <p>A lovely surprise to brighten someone's day.</p>
                         <div class="price">KSh 1,800</div>
@@ -330,13 +407,54 @@
                     </div>
                 </article>
 
-                <article class="product">
-                    <img
-                        src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=80"
-                        alt="Gift packaging with ribbon"
-                        loading="lazy"
-                    >
+                <article class="product" id="baby-gifts">
+                    <img src="https://images.unsplash.com/photo-1519689680058-324335c77eba?auto=format&fit=crop&w=700&q=80" alt="Soft baby gift items" loading="lazy">
                     <div class="product-info">
+                        <span class="category-label">Baby Gifts</span>
+                        <h3>New Baby Gift</h3>
+                        <p>A thoughtful welcome gift for a new little one.</p>
+                        <div class="price">Price on Request</div>
+                        <button class="add-button" data-name="New Baby Gift" data-price="0" data-quote="true">Ask for Price</button>
+                    </div>
+                </article>
+
+                <article class="product" id="bride-gifts">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=700&q=80" alt="Wedding celebration" loading="lazy">
+                    <div class="product-info">
+                        <span class="category-label">Bride-to-be Gifts</span>
+                        <h3>Bride-to-be Gift</h3>
+                        <p>A lovely surprise to celebrate the bride-to-be.</p>
+                        <div class="price">Price on Request</div>
+                        <button class="add-button" data-name="Bride-to-be Gift" data-price="0" data-quote="true">Ask for Price</button>
+                    </div>
+                </article>
+
+                <article class="product" id="graduation-gifts">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=700&q=80" alt="Graduation celebration" loading="lazy">
+                    <div class="product-info">
+                        <span class="category-label">Graduation Gifts</span>
+                        <h3>Graduation Gift</h3>
+                        <p>Celebrate a special achievement with a thoughtful gift.</p>
+                        <div class="price">Price on Request</div>
+                        <button class="add-button" data-name="Graduation Gift" data-price="0" data-quote="true">Ask for Price</button>
+                    </div>
+                </article>
+
+                <article class="product" id="jewellery">
+                    <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d?auto=format&fit=crop&w=700&q=80" alt="Jewellery display" loading="lazy">
+                    <div class="product-info">
+                        <span class="category-label">Jewellery</span>
+                        <h3>Jewellery and Necklace</h3>
+                        <p>A special accessory to make a gift memorable.</p>
+                        <div class="price">Price on Request</div>
+                        <button class="add-button" data-name="Jewellery and Necklace" data-price="0" data-quote="true">Ask for Price</button>
+                    </div>
+                </article>
+
+                <article class="product" id="birthday-gifts">
+                    <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?auto=format&fit=crop&w=700&q=80" alt="Birthday gift package" loading="lazy">
+                    <div class="product-info">
+                        <span class="category-label">Birthday Gifts</span>
                         <h3>Birthday Surprise</h3>
                         <p>Make their birthday memorable with a thoughtful gift.</p>
                         <div class="price">KSh 1,500</div>
@@ -344,19 +462,39 @@
                     </div>
                 </article>
 
-                <article class="product">
-                    <img
-                        src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=700&q=80"
-                        alt="Elegant flowers arranged as a gift"
-                        loading="lazy"
-                    >
+                <article class="product" id="personalised-gifts">
+                    <img src="https://images.unsplash.com/photo-1513519245088-0e12902e5a38?auto=format&fit=crop&w=700&q=80" alt="Personalised gift arrangement" loading="lazy">
                     <div class="product-info">
+                        <span class="category-label">Personalised Gifts</span>
+                        <h3>Personalised Gift</h3>
+                        <p>A custom gift made special with a name or message.</p>
+                        <div class="price">Price on Request</div>
+                        <button class="add-button" data-name="Personalised Gift" data-price="0" data-quote="true">Ask for Price</button>
+                    </div>
+                </article>
+
+                <article class="product" id="sali-kitab">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?auto=format&fit=crop&w=700&q=80" alt="Books" loading="lazy">
+                    <div class="product-info">
+                        <span class="category-label">Sali and Kitab</span>
+                        <h3>Sali and Kitab with Name</h3>
+                        <p>A personalised Sali and Kitab set with a name added. Contact us to confirm available options and pricing.</p>
+                        <div class="price">Price on Request</div>
+                        <button class="add-button" data-name="Sali and Kitab with Name" data-price="0" data-quote="true">Ask for Price</button>
+                    </div>
+                </article>
+
+                <article class="product" id="other-gifts">
+                    <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=700&q=80" alt="Gift flowers" loading="lazy">
+                    <div class="product-info">
+                        <span class="category-label">Other Gifts</span>
                         <h3>Special Occasion Gift</h3>
                         <p>A thoughtful way to celebrate life's milestones.</p>
                         <div class="price">KSh 2,000</div>
                         <button class="add-button" data-name="Special Occasion Gift" data-price="2000">Add to Cart</button>
                     </div>
                 </article>
+
             </div>
         </section>
 
@@ -375,15 +513,13 @@
                     Total: KSh 0
                 </div>
 
-                <a
-                    class="whatsapp-button"
-                    id="whatsapp-order"
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                >
+                <a class="whatsapp-button" id="whatsapp-order" href="#" target="_blank" rel="noopener noreferrer">
                     Order Through WhatsApp
                 </a>
+
+                <p class="notice">
+                    Items marked “Price on Request” must be confirmed with us on WhatsApp before ordering.
+                </p>
             </div>
         </section>
     </main>
@@ -395,8 +531,7 @@
     </footer>
 
     <script>
-        // Demonstration product cart.
-        // We'll connect your real WhatsApp number in a later step.
+        const WHATSAPP_NUMBER = "254728225741";
         const cart = [];
 
         const cartCount = document.getElementById("cart-count");
@@ -406,12 +541,33 @@
 
         document.querySelectorAll(".add-button").forEach(button => {
             button.addEventListener("click", () => {
-                cart.push({
-                    name: button.dataset.name,
-                    price: Number(button.dataset.price)
-                });
+                const isQuote = button.dataset.quote === "true";
+                const name = button.dataset.name;
+                const price = Number(button.dataset.price);
 
+                if (isQuote) {
+                    const message = [
+                        "Hello Raczs Gifts Shop!",
+                        "",
+                        `I'd like to ask for the price of: ${name}.`,
+                        "Please let me know the available options and price."
+                    ].join("\n");
+
+                    whatsappOrder.href =
+                        `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+
+                    window.open(whatsappOrder.href, "_blank", "noopener");
+                    return;
+                }
+
+                if (!Number.isFinite(price) || price <= 0) {
+                    alert("Please contact us on WhatsApp to confirm this product's price.");
+                    return;
+                }
+
+                cart.push({ name, price });
                 renderCart();
+
                 document.getElementById("cart").scrollIntoView({
                     behavior: "smooth"
                 });
@@ -420,7 +576,6 @@
 
         function renderCart() {
             cartItems.replaceChildren();
-
             cartCount.textContent = cart.length;
 
             if (cart.length === 0) {
@@ -460,28 +615,27 @@
 
             if (cart.length === 0) {
                 whatsappOrder.href = "#cart";
-            } else {
-                const orderLines = cart.map(item =>
-                    `- ${item.name}: KSh ${item.price.toLocaleString("en-KE")}`
-                );
-
-                const message = [
-                    "Hello Raczs Gifts Shop! I'd like to order:",
-                    "",
-                    ...orderLines,
-                    "",
-                    `Total: KSh ${total.toLocaleString("en-KE")}`,
-                    "Please let me know how to proceed."
-                ].join("\n");
-
-                // Replace this placeholder with your WhatsApp number later.
-                const whatsappNumber = "254728225741";
-
-                whatsappOrder.href =
-                    `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                return;
             }
-        }
-    </script>
 
+            const orderLines = cart.map(item =>
+                `- ${item.name}: KSh ${item.price.toLocaleString("en-KE")}`
+            );
+
+            const message = [
+                "Hello Raczs Gifts Shop! I'd like to order:",
+                "",
+                ...orderLines,
+                "",
+                `Total: KSh ${total.toLocaleString("en-KE")}`,
+                "Please let me know how to proceed."
+            ].join("\n");
+
+            whatsappOrder.href =
+                `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+        }
+
+        renderCart();
+    </script>
 </body>
 </html>
